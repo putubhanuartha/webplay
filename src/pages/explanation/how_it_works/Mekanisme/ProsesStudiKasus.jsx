@@ -12,7 +12,7 @@ function ProsesStudiKasus() {
 				id="apa-itu-client"
 				className="list-disc"
 			>
-				<span className="font-semibold text-lg mb-2">Study Case Process</span>
+				<span className="font-semibold text-lg mb-2">Study Case HTTP Process</span>
 				<p className="pl-5 mb-2">
 					Setelah memahami cara kerja aplikasi web secara umum, mari kita lihat
 					prosesnya dari studi kasus sebelumnya.

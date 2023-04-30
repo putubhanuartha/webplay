@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import htmlDoc from "../../../../assets/htmldoc.png";
 function HTML() {
-	const [input, setInput] = useState();
 	const [indexDropdown, setIndexDropdown] = React.useState(-1);
-	const [html, setHtml] = useState(`<!-- change code here --> 
+	const [htmlTable, setHtmlTable] = useState(`<!-- change code here --> 
 	<table id="siswaTable">
     <thead>
       <tr>
@@ -21,7 +21,15 @@ function HTML() {
 		<tr><td>001</td><td>Agus</td><td><img src='images/001.jpg' width='50'></td><td>80</td><td>75</td><td>70</td><td>75</td><td>Lulus</td></tr><tr><td>002</td><td>Budi</td><td><img src='images/002.jpg' width='50'></td><td>73</td><td>72</td><td>70</td><td>71.67</td><td>Tidak Lulus</td></tr><tr><td>003</td><td>Citra</td><td><img src='images/003.jpg' width='50'></td><td>84</td><td>87</td><td>91</td><td>87.33</td><td>Lulus</td></tr>    </tbody>
   </table> 
 `);
-	const docs = `
+	const [htmlInput, setHtmlInput] = useState(`<form action="">
+	<input
+		type="text"
+		placeholder="input here !"
+	/>
+	<button type="submit">SUBMIT</button>
+</form>`);
+	const docs = (html) => {
+		return `
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
@@ -35,9 +43,7 @@ function HTML() {
 		</body>
 		</html>
 	`;
-	useEffect(() => {
-		console.log(html);
-	}, [html]);
+	};
 	return (
 		<div id="html">
 			<h1 className="font-semibold text-3xl mb-2">More Exploration</h1>
@@ -84,6 +90,15 @@ function HTML() {
 									dapat dibaca oleh berbagai browser seperti Chrome, Opera,
 									Mozilla Firefox, Microsoft Edge, dll.
 								</p>
+								<p>
+									Dokumen HTML umumnya ditandai dengan tag DOCTYPE di awal
+									script file
+								</p>
+								<img
+									src={htmlDoc}
+									alt=""
+									className="h-36 w-[70%] mx-auto"
+								/>
 							</div>
 						</div>
 					</li>
@@ -119,6 +134,35 @@ function HTML() {
 									digunakan untuk membangun halaman web. Umumnya setiap elemen
 									HTML akan dibungkus dengan tag html (&lt;&gt;)
 								</p>
+								<p>
+									Elemen HTML masing-masing memiliki closing tag. Ada yang
+									berupa self closing tag, atau dengan pair closing tag.
+								</p>
+								<textarea
+									name="tag"
+									id="tag"
+									cols="30"
+									rows="5"
+									defaultValue={`<!-- Menggunakan pair-closing tag -->
+  <h1>Data Siswa</h1>
+  
+  <!-- Menggunakan self-closing tag -->
+  <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Cari siswa berdasarkan nama...">`}
+								></textarea>
+								<ul className="list-disc pl-5">
+									<li>
+										<p>
+											Self-closing tag umumnya digunakan oleh elemen html yang
+											tidak memiliki anak / elemen lain di dalamnya
+										</p>
+									</li>
+									<li>
+										<p>
+											Pair-closing tag umumnya digunakan oleh elemen html yang
+											didalamnya masih memiliki elemen lain
+										</p>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</li>
@@ -165,21 +209,22 @@ function HTML() {
 								<div className="flex flex-col">
 									<label htmlFor="htmlInput">HTML</label>
 									<textarea
-										defaultValue={html}
+										defaultValue={htmlTable}
 										name="htmlInput"
 										id="htmlInput"
-										rows="5"
+										rows="10"
 										cols={40}
 										onChange={(e) => {
-											setHtml(e.target.value);
+											setHtmlTable(e.target.value);
 										}}
 									></textarea>
 								</div>
 								<div>
 									<iframe
-										srcDoc={docs}
+										srcDoc={docs(htmlTable)}
 										sandbox="allow-scripts"
 										frameborder="0"
+										className="w-full"
 									></iframe>
 								</div>
 							</div>
@@ -218,28 +263,25 @@ function HTML() {
 									dalam elemen form yang selanjutnya dapat diolah oleh browser
 									ataupun dikirimkan ke server.
 								</p>
-								<form
-									method="post"
-									onSubmit={(e) => {
-										e.preventDefault();
-										alert("your input " + input);
-									}}
-								>
-									<input
-										type="text"
-										placeholder="Input here try !!"
-										value={input}
-										onChange={(e) => {
-											setInput(e.target.value);
-										}}
-										className="px-3 py-2"
-									/>
-									<input
-										type="submit"
-										placeholder="submit"
-										className="px-3 py-2 ml-3 bg-slate-500 text-white cursor-pointer"
-									/>
-								</form>
+								<textarea
+									defaultValue={htmlInput}
+									onChange={(e) => setHtmlInput(e.target.value)}
+									name="input-contoh"
+									id="input-contoh"
+									cols="30"
+									rows="10"
+								></textarea>
+								<div>
+									<iframe
+										srcDoc={docs(htmlInput)}
+										className="w-full"
+										frameborder="0"
+									></iframe>
+								</div>
+								<p>
+									Elemen input umumnya berada di dalam elemen form karena memang
+									sering digunakan dalam proses pengiriman data ke server
+								</p>
 							</div>
 						</div>
 					</li>
