@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-
+import arrayPhp from "../../../../assets/array.png";
+import conditional from "../../../../assets/conditional.png";
+import loopPhp from "../../../../assets/looping.png";
 function PHP() {
 	const [indexDropdown, setIndexDropdown] = React.useState(-1);
 	const [injectPhp, setInjectPhp] = useState();
@@ -168,6 +170,25 @@ function PHP() {
 									Array adalah sebuah struktur data yang mana dapat menyimpan
 									banyak data dengan tipe data apapun
 								</p>
+								<p>
+									Dalam contoh kasus, terdapat implementasi array dalam bentuk
+									dua dimensi, dimana sebuah array dapat menyimpan beberapa
+									array lainnya
+								</p>
+								<p>
+									Array $siswa di bawah menyimpan objek array siswa, dan tiap
+									objek tersebut memiliki array lain yang memiliki nilai
+									layaknya attribut dalam sebuah objek, dimana tiap baris
+									tersebut memiliki{" "}
+									<span className="font-semibold">
+										nomor, nama, foto, nilai tugas, uts, uas, rata-rata,
+										keterangan
+									</span>
+								</p>
+								<img
+									src={arrayPhp}
+									alt="array php"
+								/>
 							</div>
 						</div>
 					</li>
@@ -204,6 +225,33 @@ function PHP() {
 									kondisi tertentu, umumnya kondisi tersebut bernilai benar atau
 									salah
 								</p>
+								<p>
+									Pada contoh kasus, terdapat deklarasi $rata-rata dimana
+									variabel tersebut akan menyimpan nilai rata-rata siswa
+								</p>
+								<p>
+									Nilai siswa tersebut diambil dari nilai tugas, uts, uas
+									ditandai dengan pengambilan nilai array pada index ke 3, 4,
+									dan 5
+								</p>
+								<p>
+									Nilai rata-rata itu kemudian dibulatkan dan dimasukkan pada
+									kolom ke 7 pada tampilan
+								</p>
+								<p>
+									Kemudian terdapat pengecekan kondisi untuk memberikan
+									keterangan apakah lulus atau tidak
+								</p>
+								<p className="font-semibold">
+									Lulus jika nilai rata-rata lebih dari sama dengan 75
+								</p>
+								<p className="font-semibold">
+									Tidak lulus jika nilai rata-rata kurang dari 75
+								</p>
+								<img
+									src={conditional}
+									alt="conditional function"
+								/>
 							</div>
 						</div>
 					</li>
@@ -238,6 +286,18 @@ function PHP() {
 									Looping adalah sebuah konsep dimana program dapat mengeksekusi
 									blok secara berulang selama sebuah kondisi terpenuhi
 								</p>
+								<p>
+									Pada studi kasus, looping dilakukan untuk mencetak elemen pada
+									table untuk setiap baris sesuai dengan data pada array yang
+									telah dibuat
+								</p>
+								<p>
+									Looping juga dilakukan dengan perhitungan sederhana untuk menghitung nilai rata-rata dan mencetak keterangan lulus-tidaknya siswa
+								</p>
+								<img
+									src={loopPhp}
+									alt="looping php"
+								/>
 							</div>
 						</div>
 					</li>
