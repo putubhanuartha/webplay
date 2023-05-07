@@ -18,7 +18,7 @@ function Mekanisme() {
 				>
 					<FiChevronRight />
 				</li>
-				Mekanisme
+				HTTP Communication 
 			</a>
 			<ul
 				className={`pl-6 border-l-[0.2px] border-gray-300 ml-3 mt-4 flex flex-col gap-y-2 ${

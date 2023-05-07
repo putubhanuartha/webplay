@@ -3,7 +3,7 @@ import React from "react";
 function StartFromClient() {
 	return (
 		<div id="start-from-client">
-			<h1 className="font-semibold text-3xl mb-2">General Mechanism</h1>
+			<h1 className="font-semibold text-3xl mb-2">HTTP Communication Process</h1>
 			<li
 				className="list-disc"
 			>

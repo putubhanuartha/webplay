@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import htmlDoc from "../../../../assets/htmldoc.png";
+
 function HTML() {
 	const [indexDropdown, setIndexDropdown] = React.useState(-1);
 	const [htmlTable, setHtmlTable] = useState(`<!-- change code here --> 
@@ -46,7 +47,9 @@ function HTML() {
 	};
 	return (
 		<div id="html">
-			<h1 className="font-semibold text-3xl mb-2">More Exploration</h1>
+			<h1 className="font-semibold text-3xl mb-2">
+				More Exploration on Study Case
+			</h1>
 			<li className="list-disc">
 				<span className="font-semibold text-lg mb-2">HTML</span>
 				<p className="pl-5 mb-2">
@@ -55,6 +58,7 @@ function HTML() {
 					sebuah web akan didefinisikan melalui HTML, anggaplah HTML sebagai
 					raga tubuh manusia.
 				</p>
+
 				<ul className="px-5 mt-5">
 					<li className="mb-2 rounded-md">
 						<button
